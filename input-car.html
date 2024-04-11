@@ -1,7 +1,7 @@
-<form style="display: flex;flex-direction: column;width: 25%;" action="create.php" method="post">
+<form style="display: flex;flex-direction: column;width: 25%;" action="php/create.php" method="post" enctype="multipart/form-data">
     <h2>Ingresar Automovil: </h2>
     <label for="img">Foto: </label>
-    <input type="file">
+    <input type="file" name="img">
     <label for="marca">Marca: </label>
     <input type="text" name="marca">
     <label for="modelo">Modelo</label>
