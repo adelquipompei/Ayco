@@ -12,7 +12,8 @@ $auto = array(
     'marca' =>  $_POST['marca'],
     'modelo'=> $_POST['modelo'],
     'img_name'=> $_FILES['img']['name'],
-    'file'=> $_FILES['img']['tmp_name']
+    'file'=> $_FILES['img']['tmp_name'],
+    'year'=> $_POST['year']
 );
 
 $ruta = "img/uploaded_images/".$auto['img_name'];
@@ -25,7 +26,7 @@ print_r($auto);
 echo '</pre>';
 
 
-$sql = "INSERT INTO cars (marca,modelo,imagen) VALUES ('" . $auto['marca'] . "' , '" . $auto['modelo'] . "' , '".$ruta."')";
+$sql = "INSERT INTO cars (marca,modelo,imagen,año) VALUES ('" . $auto['marca'] . "' , '" . $auto['modelo'] . "' , '".$ruta."', '".$auto['year']."')";
 
 
 
