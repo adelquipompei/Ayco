@@ -1,4 +1,4 @@
-<form style="display: flex;flex-direction: column;width: 25%;" action="php/create.php" method="post" enctype="multipart/form-data">
+<form action="php/create.php" method="post" enctype="multipart/form-data">
     <h2>Ingresar Automovil: </h2>
     <label for="img">Foto: </label>
     <input type="file" name="img">
@@ -6,13 +6,19 @@
     <input type="text" name="marca">
     <label for="modelo">Modelo</label>
     <input type="text" name="modelo">
-    <label for="año">Año: </label>
+    <label for="año">A&ntilde;o: </label>
     <input type="text" name="year">
-    <button type="submit">Enviar</button>
+    <button style="width: 100px;height: 30px;cursor: pointer; text-align: center;" type="submit">Enviar</button>
 </form>
 
 <style>
     h2,input,button{
         margin-bottom: 20px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 </style>

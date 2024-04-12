@@ -1,4 +1,29 @@
-*{
-    margin: 0;
-    padding: 0;
+.container{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+   
+}
+
+
+
+
+.caja{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cars{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
