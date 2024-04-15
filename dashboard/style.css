@@ -75,6 +75,7 @@ aside{
     background: #ececec;
     width: 0;
     min-width: 200px;
+    overflow: hidden;
 }
 
 aside>ul{
@@ -86,6 +87,7 @@ aside>ul>li{
     /*margin-bottom: 5px;*/
     padding: 8px 0;
     cursor: pointer;
+    min-width: 200px;
 }
 
 .no-aside{
