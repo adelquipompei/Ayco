@@ -106,4 +106,28 @@ hr{
 .link-aside{
     text-decoration: none;
     color: black;
+    
+}
+
+.link-aside:hover{
+    color: #4683ae;
+    
+}
+
+.titulo-ingresar-auto,input,.boton{
+    margin-bottom: 20px;
+}
+
+.titulo-ingresar-auto{
+    font-size: 25px;
+    padding-top: 8px;
+}
+
+.new-car{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
 }
