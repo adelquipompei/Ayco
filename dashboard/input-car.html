@@ -1,0 +1,31 @@
+<form action="../php/create.php" method="post" enctype="multipart/form-data">
+    <h2 class="titulo-ingresar-auto">Ingresar Automovil: </h2>
+    <label for="img">Foto: </label>
+    <input type="file" name="img">
+    <label for="marca">Marca: </label>
+    <input type="text" name="marca">
+    <label for="modelo">Modelo</label>
+    <input type="text" name="modelo">
+    <label for="año">A&ntilde;o: </label>
+    <input type="text" name="year">
+    <button class="boton" style="width: 100px;height: 30px;cursor: pointer; text-align: center;" type="submit">Enviar</button>
+</form>
+
+<style>
+    .titulo-ingresar-auto,input,.boton{
+        margin-bottom: 20px;
+    }
+
+    .titulo-ingresar-auto{
+        font-size: 25px;
+        padding-top: 8px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        margin: auto;
+    }
+</style>
