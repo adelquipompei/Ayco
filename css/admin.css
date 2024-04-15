@@ -1,19 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.contenedor{
-    
+.contenedor {
+
     display: flex;
     width: 100%;
     height: 100vh;
 
-   
+
 
 }
 
-nav{
+nav {
     width: 100%;
     height: auto;
     padding: 5px;
@@ -22,29 +22,29 @@ nav{
     background: #234a66;
     align-items: center;
     margin: 0;
-    
-    
+
+
 }
 
 
 
-.name-user{
+.name-user {
     margin-right: 15px;
 }
 
-.brand{
+.brand {
     display: flex;
-    flex-basis:20%;
+    flex-basis: 20%;
     justify-content: space-between;
     min-width: 200px;
 }
 
-.brand>h2{
+.brand>h2 {
     margin: 0;
     font-size: larger;
 }
 
-.brand>button{
+.brand>button {
     width: 30px;
     height: 30px;
     border-radius: 5px;
@@ -52,24 +52,29 @@ nav{
     background: #234a66;
 }
 
-.brand>button>.ti-menu-2,.brand>h2,.user>i,.user>.name-user{
+.brand>button>.ti-menu-2,
+.brand>h2,
+.user>i,
+.user>.name-user {
     color: white;
 }
 
-.brand>button>.ti-menu-2:before{
+.brand>button>.ti-menu-2:before {
     font-size: 25px;
 }
 
-.accion{
-    cursor: pointer;
+.accion {
+    
+    min-width: 180px;
+    
 }
 
-.accion>span{
-    margin-right: 10px!important;
+.accion>span {
+    margin-right: 10px !important;
 }
 
-aside{
-    transition: .3s ease-in-out ;
+aside {
+    transition: .3s ease-in-out;
     flex-basis: 20%;
     flex-grow: 0;
     background: #ececec;
@@ -78,11 +83,11 @@ aside{
     overflow: hidden;
 }
 
-aside>ul{
-    padding:0px 20px;
+aside>ul {
+    padding: 0px 20px;
 }
 
-aside>ul>li{
+aside>ul>li {
     list-style: none;
     /*margin-bottom: 5px;*/
     padding: 8px 0;
@@ -90,44 +95,50 @@ aside>ul>li{
     min-width: 200px;
 }
 
-.no-aside{
+.no-aside {
     flex-grow: 1;
 }
 
-aside>ul>li>a>i{
+aside>ul>li>a>i {
     margin-right: 6px;
-   
+
 }
 
-hr{
-    margin: 0!important;
+hr {
+    margin: 0 !important;
 }
 
-.link-aside{
+.link-aside {
     text-decoration: none;
     color: black;
-    
+
 }
 
-.link-aside:hover{
+.link-aside:hover {
     color: #4683ae;
-    
+
 }
 
-.titulo-ingresar-auto,input,.boton{
+.titulo-ingresar-auto,
+input,
+.boton {
     margin-bottom: 20px;
 }
 
-.titulo-ingresar-auto{
+.titulo-ingresar-auto {
     font-size: 25px;
     padding-top: 8px;
 }
 
-.new-car{
+.new-car {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 80%;
     margin: auto;
     margin-top: 30px;
+}
+
+.fila{
+    cursor: pointer;
 }
