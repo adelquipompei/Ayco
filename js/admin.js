@@ -1,6 +1,6 @@
 fetch('../php/api.php').then(resp => resp.json()).then(data => {
     data.forEach(car => {
-        //console.log(car)
+        console.log(car)
         let tbody = document.querySelector('#tbody');
         let fila = document.createElement('tr');
         fila.classList.add('fila');
@@ -13,7 +13,7 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
         let td = ` 
     <td scope="row">${car.Marca}</td>
     <td scope="row"> ${car.Modelo} </td>
-    <td scope="row"> ${car.Imagen} </td>
+    <td scope="row"> ${car.imagenes[0]} </td>
     <td scope="row"> ${car.año} </th>
     <td class="accion"></td>`;
         fila.innerHTML = td;
@@ -30,7 +30,8 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
             //let editar = e.target.querySelector('#editar');
             let eliminar = e.target.querySelector('#eliminar');
             eliminar.addEventListener('click', () => {
-                confirm(`Desea Eliminar ${e.target.dataset.marca} ${e.target.dataset.modelo} Modelo: ${e.target.dataset.year}? `)
+                confirm(`Desea Eliminar ${e.target.dataset.marca} ${e.target.dataset.modelo} Modelo: ${e.target.dataset.year}? `) ? window.location.href = `../php/delete.php?id=${e.target.dataset.id}` : '';
+
             })
             row.addEventListener('mouseleave', (e) => {
                 e.target.querySelector('.accion').innerHTML = '';
@@ -50,8 +51,20 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
 
 });
 
-
-
+let menuButton = document.querySelector('#menuButton');
+let aside = document.querySelector('#aside');
+let collapse = false;
+menuButton.addEventListener('click',()=>{
+    if(!collapse){
+        aside.style.flexBasis = 0;
+        aside.style.minWidth = 0;
+        collapse = true;
+    }else{
+        aside.style.flexBasis = '20%';
+        aside.style.minWidth = '200px';
+        collapse = false;
+    }
+})
 
 
 

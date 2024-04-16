@@ -1,7 +1,7 @@
 <form class="new-car" action="../php/create.php" method="post" enctype="multipart/form-data">
     <h2 class="titulo-ingresar-auto">Ingresar Automovil: </h2>
     <label for="img">Foto: </label>
-    <input type="file" name="img">
+    <input type="file" name="img[]" id="img" multiple>
     <label for="marca">Marca: </label>
     <input type="text" name="marca">
     <label for="modelo">Modelo</label>
