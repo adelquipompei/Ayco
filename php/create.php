@@ -1,4 +1,12 @@
 <?php
+require_once("../tinify-php-master/lib/Tinify/Exception.php");
+require_once("../tinify-php-master/lib/Tinify/ResultMeta.php");
+require_once("../tinify-php-master/lib/Tinify/Result.php");
+require_once("../tinify-php-master/lib/Tinify/Source.php");
+require_once("../tinify-php-master/lib/Tinify/Client.php");
+require_once("../tinify-php-master/lib/Tinify.php");
+\Tinify\setKey("4LnZmb9gggRGytC717ByQ8fGf3Bk218W");
+
 include("conexion.php");
 
 // Verificar la conexión
@@ -26,9 +34,15 @@ if ($conn->query($sql) === TRUE) {
         $img_name = $_FILES["img"]["name"][$i];
         $img_tmp = $_FILES["img"]["tmp_name"][$i];
         $ruta = $uploadsDirectory . $img_name;
+      
 
         // Mover archivo de imagen al directorio de destino
         if (move_uploaded_file($img_tmp, $ruta)) {
+            try {
+                \Tinify\fromFile($ruta)->toFile($ruta);
+            } catch(\Tinify\Exception $e) {
+                echo "Hubo un error al comprimir la imagen: " . $e->getMessage();
+            }
             // Insertar la ruta de la imagen asociada al auto en la tabla imagenes
             $sql2 = "INSERT INTO imagenes (id_auto, imagen_auto) VALUES ('$auto_id', '$ruta')";
 
