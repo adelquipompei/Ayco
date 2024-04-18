@@ -15,15 +15,13 @@
 
 nav {
     width: 100%;
-    height: auto;
     padding: 5px;
     display: flex;
     justify-content: space-between;
     background: #234a66;
     align-items: center;
-    margin: 0;
-
-
+  
+   
 }
 
 
@@ -96,6 +94,7 @@ aside {
 
 aside>ul {
     padding: 0px 20px;
+   
 }
 
 aside>ul>li {
@@ -152,5 +151,25 @@ input,
 
 .fila{
     cursor: pointer;
+}
+
+/* HTML: <div class="loader"></div> */
+/* Estilo para el ícono de carga */
+#loader {
+    display: inline-block; /* Mostrar como bloque en línea */
+    
+    
+    animation: spin 1.5s infinite linear; /* Aplicar animación de giro */
+}
+
+/* Definición de la animación de giro */
+@keyframes spin {
+    to {
+        transform: rotate(360deg); /* Girar el ícono 360 grados */
+    }
+}
+
+#spiner{
+    display: none;
 }
 

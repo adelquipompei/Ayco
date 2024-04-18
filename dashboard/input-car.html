@@ -1,13 +1,31 @@
 <form class="new-car" action="../php/create.php" method="post" enctype="multipart/form-data">
-    <h2 class="titulo-ingresar-auto">Ingresar Automovil: </h2>
-    <label for="img">Foto: </label>
-    <input type="file" name="img[]" id="img" multiple>
-    <label for="marca">Marca: </label>
-    <input type="text" name="marca">
-    <label for="modelo">Modelo</label>
-    <input type="text" name="modelo">
-    <label for="año">A&ntilde;o: </label>
-    <input type="text" name="year">
-    <button class="boton" style="width: 100px;height: 30px;cursor: pointer; text-align: center;" type="submit">Enviar</button>
+    <h2 class="titulo-ingresar-auto">Ingresar Automóvil</h2>
+
+    <div class="form-group">
+        <label for="img">Foto:</label>
+        <input type="file" class="form-control" id="img" name="img[]" multiple required>
+    </div>
+
+    <div class="form-group">
+        <label for="marca">Marca:</label>
+        <input type="text" class="form-control" id="marca" name="marca" required>
+    </div>
+
+    <div class="form-group">
+        <label for="modelo">Modelo:</label>
+        <input type="text" class="form-control" id="modelo" name="modelo" required>
+    </div>
+
+    <div class="form-group">
+        <label for="year">Año:</label>
+        <input type="text" class="form-control" id="year" name="year" required>
+    </div>
+
+    <button id="boton" class="btn btn-primary my-3" style="width: 130px; cursor: pointer; text-align: center;" type="submit">
+        <span id="spiner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <span id="upload" class="ti ti-upload"></span>
+        <span class="sr-only ml-2">Subir</span>
+    </button>
 </form>
+
 

@@ -44,6 +44,11 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
 
     })
 
+ let table = document.querySelector('#table');
+ let aside = document.querySelector('#aside');
+ console.log(table.clientHeight)
+ aside.style.height = table.clientHeight + 'px';
+
 
 
 
@@ -54,18 +59,34 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
 let menuButton = document.querySelector('#menuButton');
 let aside = document.querySelector('#aside');
 let collapse = false;
+let asideUl = document.querySelector('#aside-ul');
 menuButton.addEventListener('click',()=>{
     if(!collapse){
+       
         aside.style.flexBasis = 0;
         aside.style.minWidth = 0;
         collapse = true;
     }else{
+       
         aside.style.flexBasis = '20%';
         aside.style.minWidth = '200px';
         collapse = false;
     }
 })
+let form = document.querySelector('.new-car');
+let boton = document.querySelector('#boton');
+let spiner = document.querySelector('#spiner');
+let textButton = document.querySelector('.sr-only');
+let upload = document.querySelector('#upload');
 
+
+form.addEventListener('submit', () => {
+    boton.setAttribute('disabled', 'disabled'); // Deshabilitar el botón de envío
+    upload.style.display = 'none';
+    spiner.style.display = 'inline-block'
+    textButton.textContent = 'Cargando..'
+})
+    
 
 
 

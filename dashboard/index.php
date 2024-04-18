@@ -14,7 +14,7 @@ $page = $_GET['page'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\css\admin.css?5">
+    <link rel="stylesheet" href="..\css\admin.css?7">
     <link rel="stylesheet" href="..\node_modules\@tabler\icons-webfont\dist\tabler-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@ $page = $_GET['page'];
     </nav>
     <main class="contenedor">
         <aside id="aside">
-            <ul>
+            <ul id="aside-ul">
                 <li><a class="link-aside" href="index.php?page=new"><i class="ti ti-layout-grid-add"></i>Agregar Auto</a></li>
                 <hr>
                 <li><a class="link-aside" href="index.php?page=tabla"><i class="ti ti-database"></i>Administrar Autos</a></li>
@@ -102,5 +102,5 @@ $page = $_GET['page'];
 
 
 </body>
-<script src="..\js\admin.js?1"></script>
+<script src="..\js\admin.js?6"></script>
 </html>
