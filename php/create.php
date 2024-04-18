@@ -33,7 +33,7 @@ if ($conn->query($sql) === TRUE) {
         // Obtener nombre y ruta temporal de la imagen
         $img_name = $_FILES["img"]["name"][$i];
         $img_tmp = $_FILES["img"]["tmp_name"][$i];
-        $ruta = $uploadsDirectory . $img_name;
+        $ruta = $uploadsDirectory . $auto_id. '-' .$img_name;
       
 
         // Mover archivo de imagen al directorio de destino

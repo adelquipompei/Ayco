@@ -173,3 +173,6 @@ input,
     display: none;
 }
 
+#aside{
+    min-height: 100vh;
+}

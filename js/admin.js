@@ -8,6 +8,8 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
         fila.setAttribute('data-marca', car.Marca);
         fila.setAttribute('data-modelo', car.Modelo);
         fila.setAttribute('data-year', car.año);
+        fila.setAttribute('data-img', car.imagenes)
+        
 
         tbody.appendChild(fila);
         let td = ` 
@@ -30,7 +32,8 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
             //let editar = e.target.querySelector('#editar');
             let eliminar = e.target.querySelector('#eliminar');
             eliminar.addEventListener('click', () => {
-                confirm(`Desea Eliminar ${e.target.dataset.marca} ${e.target.dataset.modelo} Modelo: ${e.target.dataset.year}? `) ? window.location.href = `../php/delete.php?id=${e.target.dataset.id}` : '';
+                confirm(`Desea Eliminar ${e.target.dataset.marca} ${e.target.dataset.modelo} Modelo: ${e.target.dataset.year}?`) ?  window.location.href = `../php/delete.php?id=${e.target.dataset.id}&imagenes=${e.target.dataset.img}` : '';
+              
 
             })
             row.addEventListener('mouseleave', (e) => {
