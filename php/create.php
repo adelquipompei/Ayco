@@ -16,6 +16,7 @@ if ($conn->connect_error) {
 
 // Definir el directorio de destino para las imágenes
 $uploadsDirectory = "../img/uploaded_images/";
+$thumbDirectory = "../img/uploaded_images/thumb/";
 
 // Obtener datos del formulario
 $marca = $_POST['marca'];
@@ -34,12 +35,22 @@ if ($conn->query($sql) === TRUE) {
         $img_name = $_FILES["img"]["name"][$i];
         $img_tmp = $_FILES["img"]["tmp_name"][$i];
         $ruta = $uploadsDirectory . $auto_id. '-' .$img_name;
+        $thumbPath = $thumbDirectory . 'thumb-' .$auto_id .'-'. $img_name;
+
+
       
 
         // Mover archivo de imagen al directorio de destino
         if (move_uploaded_file($img_tmp, $ruta)) {
             try {
                 \Tinify\fromFile($ruta)->toFile($ruta);
+                $source = \Tinify\fromFile($ruta);
+                $resized = $source->resize(array(
+                    "method" => "thumb",
+                    "width" => 40,
+                    "height" => 26
+                ));
+                $resized->toFile($thumbPath);
             } catch(\Tinify\Exception $e) {
                 echo "Hubo un error al comprimir la imagen: " . $e->getMessage();
             }

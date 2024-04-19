@@ -176,3 +176,9 @@ input,
 #aside{
     min-height: 100vh;
 }
+
+td>img{
+    margin: 0 2px 0 0;
+    border-radius: 3px;
+}
+

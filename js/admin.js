@@ -9,16 +9,30 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
         fila.setAttribute('data-modelo', car.Modelo);
         fila.setAttribute('data-year', car.año);
         fila.setAttribute('data-img', car.imagenes)
-        
+        let marca = car.Marca.charAt(0).toUpperCase() + car.Marca.slice(1);
+        let modelo = car.Modelo.charAt(0).toUpperCase() + car.Modelo.slice(1);
+        let year = car.año.charAt(0).toUpperCase() + car.año.slice(1);
 
         tbody.appendChild(fila);
         let td = ` 
-    <td scope="row">${car.Marca}</td>
-    <td scope="row"> ${car.Modelo} </td>
-    <td scope="row"> ${car.imagenes[0]} </td>
-    <td scope="row"> ${car.año} </th>
+    <td scope="row">${marca}</td>
+    <td scope="row"> ${modelo} </td>
+    <td scope="row" class="img-thumb"</td>
+    <td scope="row"> ${year} </th>
     <td class="accion"></td>`;
         fila.innerHTML = td;
+      let tdImg = fila.querySelector('.img-thumb');
+        car.imagenes.forEach(img => {
+            let ruta = ` ${img.substring(0,23)}thumb/thumb-${img.slice(23)}`;
+            let imgSrc = document.createElement('img');
+            imgSrc.setAttribute('src',ruta);
+            tdImg.appendChild(imgSrc);
+            
+            
+            console.log(ruta + '' + img)
+
+
+        })
 
 
     });
