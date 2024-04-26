@@ -8,7 +8,7 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
         fila.setAttribute('data-marca', car.Marca);
         fila.setAttribute('data-modelo', car.Modelo);
         fila.setAttribute('data-year', car.año);
-        fila.setAttribute('data-img', car.imagenes)
+        fila.setAttribute('data-img', car.imagenes);
         let marca = car.Marca.charAt(0).toUpperCase() + car.Marca.slice(1);
         let modelo = car.Modelo.charAt(0).toUpperCase() + car.Modelo.slice(1);
         let year = car.año.charAt(0).toUpperCase() + car.año.slice(1);
