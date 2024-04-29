@@ -4,27 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css?2">
+    <link rel="stylesheet" href="css/style.css?10">
     <title>Document</title>
 </head>
 
 <body>
-   <div class="container">
     <header>
-        <img src="" alt=""><!--imagen de fondo-->
-        <object data="nav.html" type=""></object>
+        
+        <?php include("nav.php");?>
+        <div id="carrousel"></div>
     </header>
+    <div class="container">
 
-    <article>
-
+    <article id="buscar">
         <section id="buscador">
+            <h2>Buscar un auto</h2>
             <form action=""></form>
         </section>
 
        
         <section  class="caracteristicas"></section>
 
-        <section style="display: flex;justify-content: center;"><object style="height: 400px;width: 50%;" data="input-car.html" type=""></object></section>
+        <section style="background: #3c3c3c;height: 500px;"></section>
 
         <section id="cars"></section>       
         
@@ -32,7 +33,7 @@
         <section id="permutas"></section>
 
         <section id="at-personanlizada"></section>
-
+        
         <section id="contacto"></section>
 
     </article>
@@ -43,7 +44,7 @@
 
 
 </body>
-<script src="js/script.js?2"></script>
+<script src="js/script.js?7"></script>
 
 
 </html>

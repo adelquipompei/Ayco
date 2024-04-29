@@ -17,6 +17,8 @@ if ($conn->connect_error) {
 // Definir el directorio de destino para las imágenes
 $uploadsDirectory = "../img/uploaded_images/";
 $thumbDirectory = "../img/uploaded_images/thumb/";
+$carrouselDirectory = "../img/uploaded_images/carrousel-header/";
+
 
 // Obtener datos del formulario
 $marca = $_POST['marca'];
@@ -36,6 +38,7 @@ if ($conn->query($sql) === TRUE) {
         $img_tmp = $_FILES["img"]["tmp_name"][$i];
         $ruta = $uploadsDirectory . $auto_id. '-' .$img_name;
         $thumbPath = $thumbDirectory . 'thumb-' .$auto_id .'-'. $img_name;
+        $carrouselHeaderPath = $carrouselDirectory . 'carrousell-header-' .$auto_id .'-'. $img_name;
 
 
       
@@ -43,14 +46,23 @@ if ($conn->query($sql) === TRUE) {
         // Mover archivo de imagen al directorio de destino
         if (move_uploaded_file($img_tmp, $ruta)) {
             try {
-                \Tinify\fromFile($ruta)->toFile($ruta);
+                
                 $source = \Tinify\fromFile($ruta);
+                $source->toFile($ruta);
+                $resized2 = $source->resize(array(
+                    "method" => "cover",
+                    "width" => 1920,
+                    "height" => 1280
+                ));
+                $resized2->toFile($carrouselHeaderPath);
                 $resized = $source->resize(array(
                     "method" => "thumb",
                     "width" => 40,
                     "height" => 26
                 ));
                 $resized->toFile($thumbPath);
+                
+               
             } catch(\Tinify\Exception $e) {
                 echo "Hubo un error al comprimir la imagen: " . $e->getMessage();
             }
