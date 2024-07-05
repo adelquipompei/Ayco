@@ -17,7 +17,7 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
         let td = ` 
     <td scope="row">${marca}</td>
     <td scope="row"> ${modelo} </td>
-    <td scope="row" class="img-thumb"</td>
+    <td scope="row" class="img-thumb"></td>
     <td scope="row"> ${year} </th>
     <td class="accion"></td>`;
         fila.innerHTML = td;
@@ -104,11 +104,4 @@ form.addEventListener('submit', () => {
     textButton.textContent = 'Cargando..'
 })
     
-
-
-
-
-
-
-
 

@@ -102,5 +102,5 @@ $page = $_GET['page'];
 
 
 </body>
-<script src="..\js\admin.js?9"></script>
+<script src="..\js\admin.js?11"></script>
 </html>

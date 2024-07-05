@@ -1,4 +1,6 @@
 <?php
+set_time_limit(300); // Establecer límite de tiempo a 5 minutos
+
 require_once("../tinify-php-master/lib/Tinify/Exception.php");
 require_once("../tinify-php-master/lib/Tinify/ResultMeta.php");
 require_once("../tinify-php-master/lib/Tinify/Result.php");
