@@ -1,3 +1,4 @@
+let load = document.querySelector('#tr-load');
 fetch('../php/api.php').then(resp => resp.json()).then(data => {
     data.forEach(car => {
         console.log(car)
@@ -31,7 +32,7 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
             
             console.log(ruta + '' + img)
 
-
+            load.classList.add('d-none');
         })
 
 
@@ -71,7 +72,18 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
 
 
 
-});
+
+}).catch(e => {
+   
+    
+    spin.innerHTML = `<strong><i style="font-size: 30px;" class="ti ti-exclamation-circle mx-1 text-danger"></i><p style=margin:0 class="text-danger">No se pudo descargar la lista de autos, verifique conexion con la base de datos...</p></strong> <span id="er" class="d-none">(${e})</span>`;
+    load.addEventListener('click',()=>{
+        let er = document.querySelector('#er');
+        er.classList.toggle('d-none');
+    })
+
+
+}); 
 
 let menuButton = document.querySelector('#menuButton');
 let aside = document.querySelector('#aside');
