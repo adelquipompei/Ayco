@@ -75,8 +75,10 @@ fetch('../php/api.php').then(resp => resp.json()).then(data => {
 
 }).catch(e => {
    
+    spin.classList.add(`animate__animated`);
+    spin.classList.add(`animate__bounceIn`);
+    spin.innerHTML = `<strong><i style="font-size: 30px;" class=" ti ti-exclamation-circle mx-1 text-danger animate__animated animate__bounce"></i><p style=margin:0 class="text-danger ">No se pudo descargar la lista de autos, verifique conexion con la base de datos...</p></strong> <span id="er" class="d-none">(${e})</span>`;
     
-    spin.innerHTML = `<strong><i style="font-size: 30px;" class="ti ti-exclamation-circle mx-1 text-danger"></i><p style=margin:0 class="text-danger">No se pudo descargar la lista de autos, verifique conexion con la base de datos...</p></strong> <span id="er" class="d-none">(${e})</span>`;
     load.addEventListener('click',()=>{
         let er = document.querySelector('#er');
         er.classList.toggle('d-none');
